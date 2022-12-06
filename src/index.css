@@ -21,14 +21,33 @@
   background-size: cover;
 }
 
+.slider-contianer:hover .pagination, .slider-contianer:hover .show-scroll-btn {
+  opacity: 1;
+}
 .scroll-container {
-  transform: translateX(-100%);
+  --show-items: 6;
 }
 .scroll-card {
-  flex: 0 0 25%;
-  max-width: 25%;
+  flex: 0 0 calc(100% / var(--show-items));
+  max-width: calc(100% / var(--show-items));
   aspect-ratio: 16/9;
   padding: .25rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .scroll-container {
+    --show-items: 4;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .scroll-container {
+    --show-items: 3;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .scroll-container {
+    --show-items: 2;
+  }
 }
 
 .show-scroll-btn {
@@ -52,20 +71,27 @@
   opacity: 1;
 }
 
+/* Hover styling */
 .shows-card-enter {
   opacity: 0;
-  transform: scale(0.7);
+  transform: scale(0.6);
 }
 .shows-card-enter-active {
   opacity: 1;
   transform: translateX(0);
-  transition: transform 300ms linear;
+  transition: transform 100ms linear;
   transform-origin: bottom;
 }
 .shows-card-exit {
   opacity: 1;
 }
 .shows-card-exit-active {
-  transform: scale(0.7);
-  transition: transform 300ms linear;
+  transform: scale(0.6);
+  transition: transform 100ms linear;
+}
+
+
+/* Card button styling */
+.card-btn {
+  @apply w-10 h-10 flex justify-center items-center border-2 rounded-full border-slate-300 hover:border-slate-100;
 }

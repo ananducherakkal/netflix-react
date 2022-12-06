@@ -11,13 +11,8 @@ const Home = () => {
         <div className="w-screen h-screen main-content-screen">
         </div>
         <div className="flex flex-col -mt-24 space-y-8">
-          {movieList && movieList.map((category, id) => (
-            <div  className="flex flex-col">
-              <div className="text-neutral-200 text-lg font-semibold mb-2 px-12">
-                { category.category }
-              </div>
-              <ShowsCardScroller key={id} shows={category.movies} />
-            </div>
+          {movieList && movieList.map((category) => (
+            <ShowsCardScroller category={category} key={category.id} />
           ))}
         </div>
         <ShowsCard />

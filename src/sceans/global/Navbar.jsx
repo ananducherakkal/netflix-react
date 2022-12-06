@@ -6,7 +6,7 @@ const Navbar = () => {
   const scrollPosition = useScrollPosition()
 
   return (
-    <nav className={`w-full h-16 flex px-10 fixed top-0 transition-all duration-500 ${scrollPosition > 0 ? 'bg-black' : 'bg-transparent'}`}>
+    <nav className={`w-full h-16 flex px-10 fixed z-40 top-0 transition-all duration-500 ${scrollPosition > 0 ? 'bg-black' : 'bg-transparent'}`}>
       <a href="#" className="my-auto mr-10">
         <img src="../../../assets/netflix_logo.png" alt="netflix logo" className="h-8" />
       </a>

@@ -9,18 +9,16 @@ export const usePreviewCard = () => useContext(previewCardContext)
 export const PreviewCard = ({ children }) => {
   const [previewCardData, setPreviewCardData] = useState({ visible: false })
 
-  const setPreviewCardDataWithoutDebounce = (data) => {
-    console.log('widthout debounce called')
-    setPreviewCardData(data)
-  }
+  // const setPreviewCardDataWithoutDebounce = (data) => {
+  //   setPreviewCardData(data)
+  // }
 
-  const setPreviewCardDataDebounce = debounce((data) => {
-    setPreviewCardData(data)
-    console.log('debounce caled')
-  }, 700)
+  // const setPreviewCardDataDebounce = debounce((data) => {
+  //   setPreviewCardData(data)
+  // }, 500)
 
   return (
-    <previewCardContext.Provider value={{ previewCardData, setPreviewCardDataWithoutDebounce, setPreviewCardDataDebounce }}>
+    <previewCardContext.Provider value={{ previewCardData, setPreviewCardData }}>
       { children }
     </previewCardContext.Provider>
   )
