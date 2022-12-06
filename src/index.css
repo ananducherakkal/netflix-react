@@ -4,3 +4,68 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
 
+.nav-transparent-icon-btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: fit-content;
+  height: fit-content;
+
+}
+
+.no-scrollbar::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+.main-content-screen {
+  background-image: url('../public/assets/mockData/movie/netflix_movie_1.jpeg');
+  background-size: cover;
+}
+
+.scroll-container {
+  transform: translateX(-100%);
+}
+.scroll-card {
+  flex: 0 0 25%;
+  max-width: 25%;
+  aspect-ratio: 16/9;
+  padding: .25rem;
+}
+
+.show-scroll-btn {
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 60px;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.767);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity ease-in-out 200ms;
+}
+.show-scroll-btn:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.shows-card-enter {
+  opacity: 0;
+  transform: scale(0.7);
+}
+.shows-card-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 300ms linear;
+  transform-origin: bottom;
+}
+.shows-card-exit {
+  opacity: 1;
+}
+.shows-card-exit-active {
+  transform: scale(0.7);
+  transition: transform 300ms linear;
+}
